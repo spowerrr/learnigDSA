@@ -1,27 +1,32 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int linearSearch(int arr[],int n,int key){
     for (int i = 0; i < n; i++)
     {
         if (arr[i]==key)
         {
-          return i;  
+          return i;
         }
     }
     return -1;
 }
-int32_t main() {
+int main() {
     int n,key;
-    std::cout << "Enter the size of the array:" << std::endl;
+    cout << "Enter the size of the array:" << endl;
     cin>>n;
     int arr[n];
-    std::cout << "Array eliments:" << std::endl;
+    cout << "Array elements:" << endl;
     for (int i = 0; i < n; i++)
     {
        cin>>arr[i]; 
     }
-    std::cout << "Enter the element you want to search:";
+    cout << "Enter the element you want to search:";
     cin>>key;
-    std::cout <<"Index:" <<linearSearch(arr,n,key) <<"(Note:If -1 then key not found in the array)"<< std::endl;
+    int idx = linearSearch(arr,n,key);
+    if(idx!=-1){
+        cout<<"Index:"<<idx<<endl;
+    } else{
+        cout<<"Not Found"<<endl;
+    }
     return 0;
 }
